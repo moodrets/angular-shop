@@ -32,6 +32,7 @@
                     },
                     "configurations": {
                         "production": {
+                            "baseHref": "/angular-shop-test/",
                             "budgets": [
                                 {
                                     "type": "initial",
@@ -44,20 +45,18 @@
                                     "maximumError": "4kb"
                                 }
                             ],
-                            "outputHashing": "all"
+                            "outputHashing": "all",
+                            "fileReplacements": [
+                                {
+                                    "replace": "src/environments/environment.ts",
+                                    "with": "src/environments/environment.prod.ts"
+                                }
+                            ]
                         },
                         "development": {
                             "optimization": false,
                             "extractLicenses": false,
                             "sourceMap": true
-                        },
-                        "pages": {
-                            "fileReplacements": [
-                                {
-                                    "replace": "src/environments/environment.ts",
-                                    "with": "src/environments/environment.pages.ts"
-                                }
-                            ]
                         }
                     },
                     "defaultConfiguration": "production"

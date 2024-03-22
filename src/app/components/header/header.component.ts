@@ -14,6 +14,4 @@ export class HeaderComponent {
     public cartService = inject(CartService)
 
     public logoPath = `${environment.assetsPath}assets/img/logo.svg`
-
-    public logoLinkUrl = `${environment.routerBase}`
 }

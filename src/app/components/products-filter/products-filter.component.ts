@@ -67,7 +67,7 @@ export class ProductsFilterComponent implements OnDestroy {
 
         for (let key in formValue) {
             if (formValue[key] === '') {
-                delete formValue[key]
+                formValue[key] = null
             }
         }
 
