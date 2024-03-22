@@ -1,7 +1,7 @@
 import { CartService } from '@/services/CartService'
 import { SharedModule } from '@/shared.module'
 import { Component, inject } from '@angular/core'
-import { environment } from 'src/environments/environments'
+import { environment } from 'src/environments/environment'
 
 @Component({
     selector: 'app-header',

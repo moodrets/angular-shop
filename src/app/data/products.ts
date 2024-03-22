@@ -1,5 +1,5 @@
 import { IProduct } from '@/types/ProductType'
-import { environment } from 'src/environments/environments'
+import { environment } from 'src/environments/environment'
 
 export const productsList: IProduct[] = [
     {

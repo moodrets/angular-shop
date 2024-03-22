@@ -70,12 +70,10 @@ export class ProductListComponent implements OnDestroy {
 
     public onChangeSort(sortType: ProductSortEnum) {
         this.sortType = sortType
-        if (this.sortType) {
-            this.router.navigate([], {
-                relativeTo: this.route,
-                queryParams: { sortType: this.sortType },
-                queryParamsHandling: 'merge',
-            })
-        }
+        this.router.navigate([], {
+            relativeTo: this.route,
+            queryParams: { sortType: this.sortType || null },
+            queryParamsHandling: 'merge',
+        })
     }
 }
