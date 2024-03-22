@@ -1,0 +1,165 @@
+<div class="products-filter">
+    <div class="products-filter__title">Products filter</div>
+    <form [formGroup]="filterForm" (ngSubmit)="onSubmit($event)">
+        <div class="filter-field filter-field--price">
+            <div class="filter-field__label">Price</div>
+            <div class="filter-field__content">
+                <input
+                    type="number"
+                    class="form-control"
+                    formControlName="priceFrom"
+                    placeholder="From"
+                    (change)="onInputChange()"
+                />
+                <input
+                    type="number"
+                    class="form-control"
+                    formControlName="priceTo"
+                    placeholder="To"
+                    (change)="onInputChange()"
+                />
+            </div>
+        </div>
+        <div class="filter-field filter-field--labels">
+            <div class="filter-field__label">Color</div>
+            <div class="filter-field__content">
+                <div class="filter-field__color filter-field__color--all">
+                    <div style="background-color: white"></div>
+                    <div style="background-color: black"></div>
+                    <div style="background-color: gray"></div>
+                    <div style="background-color: blue"></div>
+                    <input
+                        type="radio"
+                        value=""
+                        formControlName="color"
+                        (change)="onInputChange()"
+                    />
+                </div>
+                @for (color of colorsList; track $index) {
+                <div class="filter-field__color" [style]="{ 'background-color': color }">
+                    <input
+                        type="radio"
+                        name="color"
+                        [value]="color"
+                        formControlName="color"
+                        (change)="onInputChange()"
+                    />
+                </div>
+                }
+            </div>
+        </div>
+        <div class="filter-field filter-field--labels">
+            <div class="filter-field__label">Brand</div>
+            <div class="filter-field__content">
+                <button type="button" class="button button--primary">
+                    <span>All</span>
+                    <input
+                        name="brand"
+                        type="radio"
+                        formControlName="brand"
+                        value=""
+                        (change)="onInputChange()"
+                    />
+                </button>
+                @for (brand of brandsList; track $index) {
+                <button type="button" class="button button--primary">
+                    <span>{{ brand }}</span>
+                    <input
+                        name="brand"
+                        type="radio"
+                        formControlName="brand"
+                        [value]="brand"
+                        (change)="onInputChange()"
+                    />
+                </button>
+                }
+            </div>
+        </div>
+        <div class="filter-field filter-field--labels">
+            <div class="filter-field__label">Screen size</div>
+            <div class="filter-field__content">
+                <button type="button" class="button button--primary">
+                    <span>All</span>
+                    <input
+                        name="screenSize"
+                        type="radio"
+                        formControlName="screenSize"
+                        value=""
+                        (change)="onInputChange()"
+                    />
+                </button>
+                @for (screen of screenSizes; track $index) {
+                <button type="button" class="button button--primary">
+                    <span>{{ screen }}</span>
+                    <input
+                        name="screenSize"
+                        type="radio"
+                        formControlName="screenSize"
+                        [value]="screen"
+                        (change)="onInputChange()"
+                    />
+                </button>
+                }
+            </div>
+        </div>
+        <div class="filter-field filter-field--labels">
+            <div class="filter-field__label">Screen resolution</div>
+            <div class="filter-field__content">
+                <button type="button" class="button button--primary">
+                    <span>All</span>
+                    <input
+                        name="screenResolution"
+                        type="radio"
+                        formControlName="screenResolution"
+                        value=""
+                        (change)="onInputChange()"
+                    />
+                </button>
+                @for (screen of screenResolutions; track $index) {
+                <button type="button" class="button button--primary">
+                    <span>{{ screen }}</span>
+                    <input
+                        name="screenResolution"
+                        type="radio"
+                        formControlName="screenResolution"
+                        [value]="screen"
+                        (change)="onInputChange()"
+                    />
+                </button>
+                }
+            </div>
+        </div>
+        <div class="filter-field filter-field--labels">
+            <div class="filter-field__label">Video storage</div>
+            <div class="filter-field__content">
+                <button type="button" class="button button--primary">
+                    <span>All</span>
+                    <input
+                        name="videoStorage"
+                        type="radio"
+                        formControlName="videoStorage"
+                        value=""
+                        (change)="onInputChange()"
+                    />
+                </button>
+                @for (storage of videoStorageList; track $index) {
+                <button type="button" class="button button--primary">
+                    <span>{{ storage }}</span>
+                    <input
+                        name="videoStorage"
+                        type="radio"
+                        formControlName="videoStorage"
+                        [value]="storage"
+                        (change)="onInputChange()"
+                    />
+                </button>
+                }
+            </div>
+        </div>
+        <div class="filter-field">
+            <button type="button" class="button button--danger" (click)="onResetFilter()">
+                Reset
+            </button>
+        </div>
+    </form>
+</div>

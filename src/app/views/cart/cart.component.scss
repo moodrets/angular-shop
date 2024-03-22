@@ -1,0 +1,19 @@
+.cart-info {
+    border-radius: 8px;
+    padding: var(--app-spacing-md);
+    box-shadow: var(--app-shadow-lg);
+    position: sticky;
+    top: 104px;
+
+    &__title {
+        font-weight: bold;
+        font-size: 22px;
+        margin-bottom: var(--app-spacing-lg);
+    }
+
+    &__total {
+        font-weight: bold;
+        font-size: 24px;
+        color: var(--app-color-brand);
+    }
+}

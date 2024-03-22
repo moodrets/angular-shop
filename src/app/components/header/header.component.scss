@@ -1,0 +1,55 @@
+:host {
+    display: block;
+    margin-bottom: var(--app-spacing-xl);
+    box-shadow: var(--app-shadow-md);
+    padding: var(--app-spacing-sm) 0;
+    background: var(--app-color-light);
+    position: sticky;
+    top: 0;
+    z-index: 40;
+}
+
+.app-header {
+    &__logo {
+        img {
+            max-width: 48px;
+            display: block;
+        }
+    }
+
+    &__cart {
+        position: relative;
+        cursor: pointer;
+        color: var(--app-color-link);
+        user-select: none;
+
+        &:visited,
+        &:active {
+            color: var(--app-color-link);
+        }
+
+        &:hover {
+            text-decoration: none;
+        }
+
+        [class*='icons'] {
+            font-size: 36px;
+            text-decoration: none;
+            display: block;
+        }
+
+        .badge {
+            position: absolute;
+            right: -14px;
+            top: -14px;
+            font-weight: bold;
+            font-size: 18px;
+        }
+    }
+
+    .centered {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+    }
+}

@@ -1,0 +1,18 @@
+<div class="product-item__image product-image" (click)="emitShowAddInfo.emit()">
+    <img [src]="product.image || 'https://placehold.co/400x300?text=Laptop+Image'" alt="" />
+    <div class="material-icons">zoom_in</div>
+</div>
+<div class="product-item__name">{{ product.name }}</div>
+<div class="product-item__price">{{ product.price | price }}</div>
+<div class="product-item__actions">
+    <button
+        type="button"
+        class="button"
+        [class]="existInCart ? 'button--secondary events-none' : 'button--primary'"
+        (click)="emitAddToCart.emit()"
+    >
+        <div class="material-icons">
+            {{ existInCart ? 'shopping_cart' : 'add_shopping_cart' }}
+        </div>
+    </button>
+</div>

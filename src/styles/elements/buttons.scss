@@ -1,0 +1,36 @@
+.button {
+    position: relative;
+    border: 2px solid transparent;
+    outline: none;
+    border-radius: 12px;
+    display: inline-flex;
+    align-items: center;
+    gap: var(--app-spacing-xs);
+    padding: var(--app-spacing-xs) var(--app-spacing-md);
+    cursor: pointer;
+    background: var(--app-color-light);
+    color: var(--app-color-dark);
+    transition: all 0.25s;
+    font-weight: 500;
+
+    &--primary {
+        background: var(--app-color-brand);
+        color: var(--app-color-light);
+    }
+
+    &--secondary {
+        border-color: var(--app-color-brand);
+        color: var(--app-color-brand);
+    }
+
+    &--danger {
+        background: var(--app-color-danger);
+        color: var(--app-color-light);
+    }
+
+    &:disabled,
+    &[disabled] {
+        pointer-events: none;
+        opacity: 0.5;
+    }
+}

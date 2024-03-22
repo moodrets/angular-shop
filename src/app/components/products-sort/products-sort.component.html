@@ -1,0 +1,13 @@
+<div class="products-sort" data-dropdown dropdown>
+    <div class="products-sort__value">
+        <span>{{ sortDictionary[currentSort] }}</span>
+        <div class="material-icons">keyboard_arrow_down</div>
+    </div>
+    <div class="products-sort__dropdown" data-dropdown-element="right">
+        <ul>
+            <li (click)="onSort(productSortEnum.Default)" class="reset">Reset</li>
+            <li (click)="onSort(productSortEnum.PriceAsc)">Sort by price asc</li>
+            <li (click)="onSort(productSortEnum.PriceDesc)">Sort by price desc</li>
+        </ul>
+    </div>
+</div>

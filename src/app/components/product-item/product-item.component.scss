@@ -1,0 +1,38 @@
+:host {
+    border-radius: 8px;
+    padding: var(--app-spacing-md);
+    box-shadow: var(--app-shadow-md);
+    transition: box-shadow 0.25s;
+    display: flex;
+    flex-direction: column;
+    gap: var(--app-spacing-md);
+
+    &:hover {
+        box-shadow: var(--app-shadow-xl);
+    }
+}
+
+.product-item {
+    &__image {
+        height: 300px;
+    }
+
+    &__name {
+        font-size: 16px;
+        font-weight: bold;
+        letter-spacing: 0.4px;
+        line-height: 1.4;
+    }
+
+    &__price {
+        font-weight: bold;
+        font-size: 22px;
+        color: var(--app-color-neutral);
+    }
+
+    &__actions {
+        display: flex;
+        justify-content: space-between;
+        margin-top: auto;
+    }
+}

@@ -1,0 +1,26 @@
+@import 'vars';
+
+.products-list {
+    display: grid;
+    gap: var(--app-spacing-lg);
+
+    @media (min-width: $screen-md) {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    @media (min-width: $screen-lg) {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+.products-list-head {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: var(--app-spacing-md);
+
+    &__title {
+        font-size: 28px;
+        font-weight: bold;
+    }
+}

@@ -1,0 +1,13 @@
+<header class="app-header">
+    <div class="centered">
+        <div class="app-header__logo">
+            <a [routerLink]="[logoLinkUrl]">
+                <img src="{{ logoPath }}" alt="" />
+            </a>
+        </div>
+        <div class="app-header__cart" [routerLink]="['/cart']">
+            <div class="badge">{{ (cartService.products$ | async)?.length }}</div>
+            <a class="material-icons-outlined">shopping_cart</a>
+        </div>
+    </div>
+</header>

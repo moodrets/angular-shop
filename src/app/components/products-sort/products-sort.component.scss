@@ -1,0 +1,25 @@
+.products-sort {
+    &__value {
+        border: 1px solid var(--app-color-neutral);
+        padding: var(--app-spacing-xs) var(--app-spacing-md);
+        font-size: 16px;
+        font-weight: 500;
+        border-radius: 12px;
+        cursor: pointer;
+        display: inline-flex;
+        align-items: center;
+        gap: var(--app-spacing-xs);
+        user-select: none;
+
+        [class*='icons'] {
+            font-size: 20px;
+        }
+    }
+
+    &__dropdown {
+        ul {
+            font-size: 18px;
+            font-weight: bold;
+        }
+    }
+}

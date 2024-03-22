@@ -1,0 +1,94 @@
+.products-filter {
+    border-radius: 8px;
+    padding: var(--app-spacing-md);
+    box-shadow: var(--app-shadow-lg);
+
+    &__title {
+        font-size: 24px;
+        font-weight: bold;
+        margin-bottom: var(--app-spacing-md);
+    }
+}
+
+.filter-field {
+    $this: &;
+    margin-top: var(--app-spacing-lg);
+
+    &__label {
+        font-weight: 500;
+        margin-bottom: var(--app-spacing-xs);
+    }
+
+    .button {
+        &:has(:checked) {
+            border-color: var(--app-color-brand);
+            color: var(--app-color-brand);
+            background: var(--app-color-light);
+        }
+    }
+
+    input[type='radio'] {
+        cursor: pointer;
+        opacity: 0;
+        position: absolute;
+        left: 0;
+        right: 0;
+        top: 0;
+        bottom: 0;
+        z-index: 5;
+        width: 100%;
+        height: 100%;
+        padding: 0;
+        margin: 0;
+    }
+
+    &__color {
+        position: relative;
+        cursor: pointer;
+        width: 32px;
+        height: 32px;
+        border: 2px solid var(--app-color-neutral);
+        border-radius: 50%;
+        transition: all 0.25s;
+        overflow: hidden;
+
+        &:focus-within {
+            transform: scale(1.2);
+        }
+
+        &:has(:checked) {
+            transform: scale(1.2);
+            border-color: var(--app-color-brand);
+            box-shadow: 0 0 0 1px var(--app-color-brand);
+        }
+
+        &--all {
+            display: flex;
+            flex-wrap: wrap;
+
+            > div {
+                width: 50%;
+                height: 50%;
+            }
+        }
+    }
+
+    &--price {
+        #{$this}__content {
+            display: flex;
+            gap: var(--app-spacing-md);
+
+            input[type='text'] {
+                width: 100%;
+            }
+        }
+    }
+
+    &--labels {
+        #{$this}__content {
+            display: flex;
+            flex-wrap: wrap;
+            gap: var(--app-spacing-xs);
+        }
+    }
+}

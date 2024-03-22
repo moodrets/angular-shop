@@ -1,0 +1,26 @@
+@if ((productsService.list$ | async | productsFilter : filterParams)?.length) {
+<div class="products-list-head">
+    <div class="products-list-head__title">
+        Found {{ (productsService.list$ | async | productsFilter : filterParams)?.length || 0 }}
+    </div>
+    <products-sort [currentSort]="sortType" (emitChangeSort)="onChangeSort($event)"></products-sort>
+</div>
+<div
+    class="products-list"
+    [@productListAnimation]="productsService.list$ | async | productsFilter : filterParams"
+>
+    @for (product of productsService.list$ | async | productsFilter: filterParams | productsSort:
+    sortType; track $index) {
+    <product-item
+        [product]="product"
+        [existInCart]="cartService.existProduct(product)"
+        (emitAddToCart)="cartService.addProduct(product)"
+        (emitShowAddInfo)="onShowAddInfo(product)"
+    ></product-item>
+    }
+</div>
+} @else {
+<div class="not-found-text">Products not found</div>
+} @if (modalService.modalVisible()) {
+<product-modal></product-modal>
+}

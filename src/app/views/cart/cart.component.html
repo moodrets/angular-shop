@@ -1,0 +1,29 @@
+<div class="centered">
+    <section class="content-layout">
+        <main class="content-layout__main">
+            @for (product of cartService.products$ | async; track $index) {
+            <cart-item
+                [product]="product"
+                (emitRemoveItem)="onRemoveItem(product)"
+                (emitShowAddInfo)="onShowAddInfo(product)"
+            ></cart-item>
+            } @empty {
+            <div class="not-found-text">Shopping cart is empty</div>
+            }
+        </main>
+        @if ((cartService.products$ | async)?.length) {
+        <aside class="content-layout__aside">
+            <div class="cart-info">
+                <div class="cart-info__title">Total sum</div>
+                <div class="cart-info__total">
+                    {{ (cartService.totalSum$ | async)! | price }}
+                </div>
+            </div>
+        </aside>
+        }
+    </section>
+</div>
+
+@if (modalService.modalVisible()) {
+<product-modal></product-modal>
+}

@@ -1,0 +1,13 @@
+<div class="cart-item__image product-image" (click)="emitShowAddInfo.emit()">
+    <img [src]="product.image" alt="" />
+    <div class="material-icons">zoom_in</div>
+</div>
+<div class="cart-item__content">
+    <div class="cart-item__top">
+        <div>
+            <div class="cart-item__name">{{ product.name }}</div>
+            <div class="cart-item__price">{{ product.price | price }}</div>
+        </div>
+        <div class="material-icons cart-item__remove" (click)="emitRemoveItem.emit()">delete</div>
+    </div>
+</div>

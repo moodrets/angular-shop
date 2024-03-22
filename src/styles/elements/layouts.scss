@@ -1,0 +1,22 @@
+.content-layout {
+    display: flex;
+    gap: var(--app-spacing-lg);
+    position: relative;
+    padding-bottom: var(--app-spacing-lg);
+
+    &__aside {
+        width: var(--app-aside-width);
+        max-width: var(--app-aside-width);
+        flex: none;
+        display: none;
+
+        @media (min-width: $screen-xl) {
+            display: block;
+        }
+    }
+
+    &__main {
+        flex: 1;
+        min-width: 0;
+    }
+}

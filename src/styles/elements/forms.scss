@@ -1,0 +1,14 @@
+.form-control {
+    border: 1px solid var(--app-color-neutral);
+    padding: var(--app-spacing-xs) var(--app-spacing-md);
+    outline: none;
+    border-radius: 8px;
+    width: 100%;
+    transition: all 0.25s;
+    font-weight: 500;
+
+    &:focus {
+        border-color: var(--app-color-brand);
+        box-shadow: 0 0 0 1px var(--app-color-brand);
+    }
+}

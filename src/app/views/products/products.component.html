@@ -1,0 +1,14 @@
+<div class="centered">
+    <section class="content-layout">
+        @if (productsService.loading$ | async) {
+        <div class="spinner spinner--centered spinner--brand"></div>
+        } @else {
+        <aside class="content-layout__aside">
+            <products-filter></products-filter>
+        </aside>
+        <main class="content-layout__main">
+            <product-list></product-list>
+        </main>
+        }
+    </section>
+</div>

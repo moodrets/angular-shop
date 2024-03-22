@@ -1,0 +1,23 @@
+:root {
+    --app-color-light: #fff;
+    --app-color-dark: #000;
+    --app-color-link: rgb(16 185 129);
+    --app-color-brand: rgb(16 185 129);
+    --app-color-danger: rgba(251, 113, 133, 1);
+    --app-color-neutral: rgba(100, 116, 139, 1);
+
+    --app-container-width: 1440px;
+    --app-aside-width: 340px;
+    --app-min-width: 320px;
+
+    --app-spacing-xs: 8px;
+    --app-spacing-sm: 12px;
+    --app-spacing-md: 16px;
+    --app-spacing-lg: 24px;
+    --app-spacing-xl: 32px;
+    --app-spacing-2xl: 48px;
+
+    --app-shadow-md: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
+    --app-shadow-lg: 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1);
+    --app-shadow-xl: 0 20px 25px -5px rgb(0 0 0 / 0.1), 0 8px 10px -6px rgb(0 0 0 / 0.1);
+}

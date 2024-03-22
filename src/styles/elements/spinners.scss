@@ -1,0 +1,27 @@
+@keyframes spinner {
+    0% {
+        transform: rotate(0);
+    }
+
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+.spinner {
+    --stroke-with: 3px;
+    width: 48px;
+    height: 48px;
+    border: var(--stroke-with) solid currentColor;
+    border-bottom-color: transparent;
+    border-radius: 50%;
+    animation: spinner 1s ease-in-out infinite;
+
+    &--brand {
+        color: var(--app-color-brand);
+    }
+
+    &--centered {
+        margin: 0 auto;
+    }
+}

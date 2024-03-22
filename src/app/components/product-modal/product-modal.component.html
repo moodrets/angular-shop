@@ -1,0 +1,22 @@
+<div class="modal" #modalDiv>
+    <div class="modal__body">
+        <div class="modal__close material-icons" (click)="modalService.closeModal()">close</div>
+        <div class="product-view">
+            <div class="product-view__image">
+                <img [src]="modalService.productItem()?.image" alt="" />
+            </div>
+            <div class="product-view__info">
+                @for (field of productFields; track $index) {
+                <div class="product-view__info-item">
+                    <strong>{{ field }}</strong>
+                    @if (productAsObject && productAsObject[field]) { @if (field === 'price') {
+                    <span>{{ productAsObject[field] | price }}</span>
+                    } @else {
+                    <span>{{ productAsObject[field] }}</span>
+                    } }
+                </div>
+                }
+            </div>
+        </div>
+    </div>
+</div>

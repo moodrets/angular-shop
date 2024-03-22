@@ -1,0 +1,53 @@
+.modal {
+    --width: 740px;
+    $this: &;
+
+    position: fixed;
+    inset: 0;
+    z-index: 100;
+    background: rgba(0, 0, 0, 0.5);
+    opacity: 0;
+    pointer-events: none;
+    transition: all 0.25s;
+    padding: var(--app-spacing-lg);
+    display: flex;
+    overflow-y: auto;
+
+    &__body {
+        position: relative;
+        width: var(--width);
+        max-width: 100%;
+        background: var(--app-color-light);
+        padding: var(--app-spacing-lg);
+        margin: auto;
+        border-radius: 16px;
+        box-shadow: var(--app-shadow-lg);
+        min-height: 200px;
+        transition: all 0.3s;
+        opacity: 0;
+        transform: translateY(-50px);
+
+        @media (min-width: $screen-lg) {
+            padding: var(--app-spacing-2xl);
+        }
+    }
+
+    &__close {
+        position: absolute;
+        z-index: 10;
+        right: 16px;
+        top: 16px;
+        font-size: 32px;
+        cursor: pointer;
+    }
+
+    &.is-visible {
+        opacity: 1;
+        pointer-events: auto;
+
+        #{$this}__body {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    }
+}

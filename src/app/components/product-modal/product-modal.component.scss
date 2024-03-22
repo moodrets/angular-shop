@@ -1,0 +1,30 @@
+.product-view {
+    &__image {
+        text-align: center;
+        margin-bottom: var(--app-spacing-lg);
+
+        img {
+            max-width: 100%;
+        }
+    }
+
+    &__info {
+        &-item {
+            margin-bottom: var(--app-spacing-xs);
+            display: flex;
+
+            strong {
+                flex: 1;
+                min-width: 0;
+                text-transform: capitalize;
+                color: var(--app-color-neutral);
+            }
+
+            span {
+                flex: 1;
+                min-width: 0;
+                font-weight: 500;
+            }
+        }
+    }
+}
